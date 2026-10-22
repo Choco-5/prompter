@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Prompteur DIY</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="editor" class="page">
+  <header><h1>Prompteur DIY</h1><span id="net">●</span></header>
+  <input id="title" placeholder="Titre du script">
+  <textarea id="script" placeholder="Colle ton script ici.
+
+Astuce : sépare les phrases avec une ligne vide."></textarea>
+  <div class="grid">
+    <label>Taille <input id="font" type="range" min="30" max="100" value="58"></label>
+    <label>Largeur <input id="width" type="range" min="40" max="90" value="68"></label>
+    <label>Vitesse <input id="speed" type="range" min="20" max="120" value="55"></label>
+  </div>
+  <div class="buttons">
+    <button id="save">Enregistrer</button><button id="clear" class="dark">Effacer</button>
+  </div>
+  <div id="saved"></div>
+  <button id="start" class="big">▶ MODE TOURNAGE</button>
+  <p class="help">Commandes vocales : « phrase suivante », « phrase précédente », « pause », « reprendre ».</p>
+</section>
+
+<section id="prompt" class="page hidden">
+  <div class="top"><button id="exit">✕</button><span id="promptTitle"></span><button id="mic">🎙</button></div>
+  <main id="stage">
+    <div id="prev" class="context"></div>
+    <div id="current"></div>
+    <div id="next" class="context"></div>
+  </main>
+  <div class="controls">
+    <button id="back">◀</button><button id="pause">⏸</button><button id="forward">▶</button>
+  </div>
+  <div id="state">Prêt</div>
+</section>
+<script src="app.js"></script>
+</body>
+</html>
